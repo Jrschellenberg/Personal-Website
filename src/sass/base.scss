@@ -3,6 +3,12 @@ html, body{
   height: 97%;
 }
 
+.container-fluid{
+  padding-left: 0;
+  padding-right: 0;
+  overflow-x: hidden !important;
+}
+
 .wrapper {
   display: flex;
   align-items: stretch;
@@ -12,8 +18,16 @@ html, body{
     display: block;
   }
 }
+.pageSection:nth-child(even){
+  background-color: $about-background-color;
+  color: $other-primary-text;
+  a{
+    color: $other-primary-text;
+  }
+}
 
 body{
+  background-color: $primary-background-colour-light;
   webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

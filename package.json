@@ -34,7 +34,8 @@
     "popper.js": "^1.14.1",
     "mongoose": "^5.0.12",
     "serve-favicon": "~2.4.5",
-    "page": "^1.8.6"
+    "page": "^1.8.6",
+    "smooth-scroll": "^12.1.5"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

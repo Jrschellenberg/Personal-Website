@@ -1,31 +1,21 @@
-nav#navigation.navbar.navbar-expand-lg.navbar-dark.navbar-right.fixed-top.secondary-text
+nav#navigation.navbar.navbar-expand-lg.navbar-right.secondary-text.navbar-light
   .container-fluid
     span.sr-only (current)
     button#toggleExpandMenu.navbar-toggler.m-2(type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation")
       span.navbar-toggler-icon
-    img.mx-auto(style="width: 10rem;" src="/images/logo/logo.svg" alt="Brand")
-    button#toggleExpandAccountMenu.navbar-toggler.m-2(type="button" data-toggle="collapse" data-target="#accountMenu" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation")
-      span
-        i.far.fa-user-circle.accountFont
-    #navbarsExample03.collapse.navbar-collapse
-      ul.navbar-nav.ml-2
+    img.d-lg-none.mx-auto(style="height: 4rem;" src="/images/logo/logo.svg" alt="Brand")
+    #navbarsExample03.collapse.navbar-collapse.mx-auto
+      ul.navbar-nav.mx-auto
         li.nav-item
-          a#homeLink.nav-link(href="/") Home
+          a.nav-link.closeMenu(data-scroll href="#About") About
         li.nav-item
-          a#whitePaperLink.nav-link.comingSoon(href="#" data-initialText="White Paper") White Paper
+          a.nav-link.closeMenu(data-scroll href="#Specs") Specs
         li.nav-item
-          a#newsLink.nav-link(href="/News/" data-initialText="News") News
+          a.nav-link.closeMenu(data-scroll href="#Wallets") Wallets
         //li.nav-item
         //  a#icoOfferingLink.nav-link.comingSoon(href="#" data-initialText="ICO Offering") ICO Offering
-    #accountMenu.collapse.navbar-collapse
-      ul.navbar-nav.ml-auto.mr-0
+        img.d-none.d-lg-inline-block.mx-5(style="height: 4rem;" src="/images/logo/logo.svg" alt="Brand")
         li.nav-item
-          a.nav-link.comingSoon(href="#" data-initialText="Support") Support
+          a.nav-link.closeMenu(data-scroll href="#Roadmap") Roadmap
         li.nav-item
-          a.nav-link.comingSoon(href="#" data-initialText="My Account") My Account
-        //li.nav-item.dropdown
-        //  a#dropdown03.nav-link.dropdown-toggle(href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") My Account
-        //  .dropdown-menu(aria-labelledby="dropdown03")
-        //    a#loginLink.dropdown-item.comingSoon(href="#" data-initialText="Login") Login
-        //    .dropdown-divider
-        //    a#registerLink.dropdown-item.comingSoon(href="#" data-initialText="Register") Register
+          a.nav-link.closeMenu(data-scroll href="#Links") Links

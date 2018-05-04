@@ -1,9 +1,9 @@
 import Middleware from '../middleware';
 import route from 'page';
+import CloseMenu from './closeMenu';
 //import Countdown from './countdown';
 //import ParsleyFormValidation from './parsleyFormValidation';
-// import MailChimpAjax from './mailchimpAjax'
-// import InternationalTelInput from './intlTelInput';
+
 
 
 export default class Router extends Middleware {
@@ -14,7 +14,7 @@ export default class Router extends Middleware {
     }
 
     _bindRoutes() {
-        //route('/', InternationalTelInput, MailChimpAjax);
+	    route('/', CloseMenu);
     }
 
     refresh() {

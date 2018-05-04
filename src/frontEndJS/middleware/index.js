@@ -1,7 +1,7 @@
-import HelloEveryWorldMiddleware from './helloEveryWorld';
-import NavigationMiddleware from './navigation';
-import ComingSoonMiddleware from './comingSoon';
-import SideBarToggle from './sidebarToggle'
+// import HelloEveryWorldMiddleware from './helloEveryWorld';
+// import NavigationMiddleware from './navigation';
+// import ComingSoonMiddleware from './comingSoon';
+
 import Bootstrap from './dependencies/bootstrap';
 
 

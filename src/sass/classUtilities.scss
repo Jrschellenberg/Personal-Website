@@ -41,6 +41,42 @@
   border-color: $secondary-text;
 }
 
+.frontBox{
+  background-color:$front-box-background-color;
+  border: 3px solid $primary-background-colour-dark;
+}
+.popEffect{
+  transition: font-size 0.6s;
+}
+.popEffect:hover{
+  font-size: 4.5rem;
+}
+
+.cardStyles{
+  .card{
+    fill: $other-primary-text;
+    background-color: $primary-colour;
+    -webkit-transition: all 0.4s; /* Safari */
+    transition: all 0.4s;
+  }
+  svg{
+    fill: inherit;
+  }
+  .card:hover{
+    background-color: $accent-colour;
+    fill: $secondary-text;
+  }
+  a{
+    text-decoration: none;
+  }
+  a:hover{
+    color:	$secondary-text;
+  }
+}
+
+.iconSize{
+  font-size:3rem;
+}
+
 .carousel,.item,.active{height:100%;}
 .carousel-inner{height:100%;}
-
