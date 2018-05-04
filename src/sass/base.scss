@@ -3,17 +3,6 @@ html, body{
   height: 97%;
 }
 
-.nav-link{
-  font-weight: normal;
-  color: $navbar-color !important;
-  transition: color .15s ease-in-out,font-weight .15s ease-in-out;
-}
-.nav-link:hover{
-  font-weight: bold;
-  color:$navbar-hover-color !important;
-}
-
-
 
 .container-fluid{
   padding-left: 0;
@@ -94,9 +83,61 @@ body{
     color: $secondary-text;
     cursor: pointer;
   }
-  
-  
 }
+
+
+/*
+Main Nav and Footer navigation link styles!
+ */
+.nav-link{
+  border-radius:$navbar-shift-border-radius;
+  color: $navbar-color !important;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out;
+}
+.nav-link:hover{
+  background-color: $primary-background-color-hover;
+  color:$navbar-hover-color !important;
+}
+
+.shift ul li a,
+.shift ul li a:after,
+.shift ul li a:before {
+  transition: all .5s;
+}
+
+/* SHIFT */
+.shift ul li a {
+  position:relative;
+  z-index: 1;
+}
+.shift ul li a:hover {
+  color: $navbar-hover-color;
+}
+.shift ul li a:after {
+  border-radius:$navbar-shift-border-radius;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 1px;
+  content: '.';
+  color: transparent;
+  background: $navbar-shift-hover-background-color;
+  visibility: none;
+  opacity: 0;
+  z-index: -1;
+}
+.shift ul li a:hover:after {
+  opacity: 1;
+  visibility: visible;
+  height: 100%;
+}
+
+
 
 
 
