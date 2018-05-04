@@ -3,6 +3,18 @@ html, body{
   height: 97%;
 }
 
+.nav-link{
+  font-weight: normal;
+  color: $navbar-color !important;
+  transition: color .15s ease-in-out,font-weight .15s ease-in-out;
+}
+.nav-link:hover{
+  font-weight: bold;
+  color:$navbar-hover-color !important;
+}
+
+
+
 .container-fluid{
   padding-left: 0;
   padding-right: 0;
@@ -76,6 +88,14 @@ body{
     color: $secondary-text;
     cursor: pointer;
   }
+  
+  button.navbar-toggler:hover{
+    background-color: $navbar-hover-color;
+    color: $secondary-text;
+    cursor: pointer;
+  }
+  
+  
 }
 
 

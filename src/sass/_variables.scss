@@ -1,52 +1,28 @@
-
+/*
+Media Query values, same as bootstrap.
+ */
 $xl: 1200px;
 $lg: 992px;
 $md: 768px;
 $sm: 576px;
 $xs: 482px;
 
-
-/*
-Body & Base Styles
- */
-
-
-$content-background: rgba(43,43,43,0.60); //Background colour to overlay the background image
-
-
-/*
-Main Navigation Variables
- */
-$nav-opacity: 0;
-$navbar-background-color-opaque: rgba(52,58,64,$nav-opacity);
-$navbar-background-color: rgb(52,58,64);
-$navbar-header-background-color: rgba(30,50,66, $nav-opacity);
-
-$navbar-padding-content-min-height: 5rem;
-$navbar-padding-content-max-height: 18rem;
-
-
-
-
 /*
 Colour pallete goes here
  */
 $front-box-background-color: #FEFEFE;
-
-$primary-background-colour-dark: #8d8d8d;
+$primary-background-colour-dark: #999999;
 $primary-background-colour-light: #efefef;
+
 $primary-text: rgba(0,0,0,0.88);
 $secondary-text: rgba(0,0,0,0.7);
 $disabled-text: rgba(0,0,0,0.5);
 $input-primary-text: rgba(0,0,0,0.87);
 $input-secondary-text: rgba(0,0,0,0.57);
 
-
 $other-primary-text: rgba(255,255,255,0.88);
 $other-secondary-text: rgba(255,255,255,0.7);
 $other-disabled-text: rgba(255,255,255,0.5);
-
-
 
 $primary-colour: #990000;
 $accent-colour: #009999;
@@ -57,20 +33,25 @@ $split-complementary-color-two: #008b45;
 $split-complementary-color-three: #8b8b00;
 
 
+/*
+Body & Base Styles
+ */
+$content-background: rgba(43,43,43,0.60); //Background colour to overlay the background image
 
 
 /*
-Sidebar Variables
+Main Navigation Variables
  */
-$sidebarWidth: 15.625rem;
-$mdSidebarWidth: 12.45rem;
-$smSidebarWidth: 9.275rem;
+$navbar-padding-content-min-height: 5rem;
+$navbar-padding-content-max-height: 18rem;
+
+
+$navbar-color: $primary-text;
+//$navbar-color: #501717;
+//$navbar-hover-color: #153737;
+$navbar-hover-color: #501717;
 
 /*
 About Variables
  */
 $about-background-color: #18121b;
-
-
-
-//#1e2232
