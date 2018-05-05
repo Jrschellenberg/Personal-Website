@@ -78,5 +78,21 @@
   font-size:3rem;
 }
 
+.parallaxBackgroundPicture{
+  
+  /* The image used */
+  background-image: url("../images/backgrounds/background.jpg");
+
+  /* Set a specific height */
+  height: 800px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  //background-position: 50% 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .carousel,.item,.active{height:100%;}
 .carousel-inner{height:100%;}
