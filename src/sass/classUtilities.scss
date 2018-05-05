@@ -94,5 +94,11 @@
   background-size: cover;
 }
 
+.vCenter{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .carousel,.item,.active{height:100%;}
 .carousel-inner{height:100%;}
