@@ -1,10 +1,7 @@
 import Middleware from '../middleware';
 import route from 'page';
 import CloseMenu from './closeMenu';
-//import Countdown from './countdown';
-//import ParsleyFormValidation from './parsleyFormValidation';
-
-
+import TreehouseStats from './treehouseStats';
 
 export default class Router extends Middleware {
     constructor() {
@@ -14,7 +11,7 @@ export default class Router extends Middleware {
     }
 
     _bindRoutes() {
-	    route('/', CloseMenu);
+	    route('/', CloseMenu, TreehouseStats);
     }
 
     refresh() {
