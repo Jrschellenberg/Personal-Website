@@ -8,10 +8,13 @@ export default class TreehouseStatsController {
 		let controller = this;
 		controller.getTreehouseAjaxContent().then((data) => {
 			controller.createPieChart(data);
+		}).catch((err) => {
+			document.getElementById('donutchart').innerHTML = "An error occured while trying to request API, Please load browser and try again";
 		});
 	}
 	
 	createPieChart(data){
+		document.getElementById('totalPoints').innerHTML = "Total Points: "+data.points.total;
 		google.charts.load('current', {'packages':['corechart']});
 		google.charts.setOnLoadCallback(drawChart);
 		
