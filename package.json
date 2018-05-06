@@ -20,21 +20,21 @@
     "test": "mocha --exit --timeout 10000 --compilers js:babel-register"
   },
   "dependencies": {
+    "body-parser": "~1.18.2",
     "bootstrap": "^4.0.0",
     "bunyan": "^1.8.12",
-    "body-parser": "~1.18.2",
-    "cookie-parser": "~1.4.3",
     "config": "^1.30.0",
+    "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "^4.16.0",
     "express-sanitizer": "^1.0.3",
     "jquery": "3.2.1",
-    "morgan": "~1.9.0",
-    "pug": "2.0.3",
-    "popper.js": "^1.14.1",
     "mongoose": "^5.0.12",
-    "serve-favicon": "~2.4.5",
+    "morgan": "~1.9.0",
     "page": "^1.8.6",
+    "popper.js": "^1.14.1",
+    "pug": "2.0.3",
+    "serve-favicon": "~2.4.5",
     "smooth-scroll": "^12.1.5"
   },
   "devDependencies": {
