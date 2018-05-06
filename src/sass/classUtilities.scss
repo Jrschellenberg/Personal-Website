@@ -52,6 +52,21 @@
   font-size: 4.5rem;
 }
 
+.projectCards{
+  @media (min-width: $sm){
+    min-height: 25rem;
+  }
+  @media (min-width: $md){
+    min-height: 22.5rem;
+  }
+  @media (min-width: $lg){
+    min-height: 20.5rem;
+  }
+  @media (min-width: $xl){
+    min-height: 16rem;
+  }
+}
+
 .cardStyles{
   .card{
     fill: $other-primary-text;
