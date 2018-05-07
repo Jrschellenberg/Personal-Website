@@ -1,17 +1,18 @@
 @import 'variables';
 
 #navigation{
-  background-color: $navbar-background-color-opaque;
+  width: 100%;
+  background-color: $navbar-top-background-color;
   font-size: medium;
   display:block;
   .dropdown-menu{
-    background-color:$navbar-background-color-opaque;
+    background-color:$navbar-top-background-color;
   }
 
   @media (min-width: $lg) {
-    background-color: $navbar-background-color-opaque;
+    background-color: $navbar-top-background-color;
     .dropdown-menu{
-      background-color:$navbar-background-color-opaque;
+      background-color:$navbar-top-background-color;
     }
   }
   

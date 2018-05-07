@@ -1,7 +1,6 @@
 export default class NavigationController {
 	constructor(){
 		this.process();
-		this.menuExpand();
 	}
 	
 	process(){
@@ -13,17 +12,6 @@ export default class NavigationController {
 			setTimeout(function(){
 				_d[_d.is(':hover')?'addClass':'removeClass']('show');
 			},300);
-		});
-	}
-	
-	/*
-	Function used to make navbar appear to "push" content down screen when you expand it.
-	 */
-	menuExpand(){
-		$(document).ready(() => {
-			$("#toggleExpandMenu").on('click', () => {
-				$('.paddingContent').toggleClass('menuActive').toggleClass('menuInactive');
-			});
 		});
 	}
 }
