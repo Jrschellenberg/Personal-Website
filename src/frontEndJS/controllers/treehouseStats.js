@@ -1,18 +1,56 @@
 
 export default class TreehouseStatsController {
 	constructor(){
+		this.pieArray = [["Points", "% of Total Points"]];
+		this.dataPoints = null;
+		this.chart = null;
+		this.chartOptions = null;
+		this.chartData = null;
+		
 		this.process();
 	}
 	
 	process(){
 		let controller = this;
 		controller.getTreehouseAjaxContent().then((data) => {
-			//console.log(data);
 			controller.fillInformation(data);
-			controller.createPieChart(data);
+			controller.storeInformation(data).then(() => {
+				controller.createPieChart().then(() => {
+					$(window).resize(function() {
+						if(this.resizeTO) clearTimeout(this.resizeTO);
+						this.resizeTO = setTimeout(function() {
+							$(this).trigger('resizeEnd');
+						}, 250);
+					});
+					$(window).on('resizeEnd', function() {
+						controller.resize();
+					});
+				});
+			});
 		}).catch((err) => {
 			console.log(err);
 			document.getElementById('donutchart').innerHTML = "An error occured while trying to request API, Please load browser and try again";
+		});
+	}
+	
+	resize(){
+		// console.log("This event is firing...");
+		this.chart.draw(this.chartData, this.chartOptions);
+	}
+	
+	storeInformation(data){
+		return new Promise((resolve) => {
+			this.dataPoints = data.points;
+			let value = [];
+			
+			for (let prop in this.dataPoints) {
+				//console.log(`Property: ${prop} \n Value: ${points[prop]}`);
+				if (this.dataPoints[prop] !== 0 && prop !== "total") {
+					value = [prop, this.dataPoints[prop]];
+					this.pieArray.push(value);
+				}
+			}
+			resolve();
 		});
 	}
 	
@@ -35,33 +73,23 @@ export default class TreehouseStatsController {
 		document.getElementById('treehouseBadge').innerHTML = html;
 	}
 	
-	createPieChart(data){
-		google.charts.load('current', {'packages':['corechart']});
-		google.charts.setOnLoadCallback(drawChart);
-		
-		function drawChart() {
-			let points = data.points;
-			let pieArray = [["Points", "% of Total Points"]];
-			let value = [];
+	createPieChart(){
+		return new Promise((resolve) => {
+			let controller = this;
+			google.charts.load('current', {'packages':['corechart']});
+			google.charts.setOnLoadCallback(drawChart);
 			
-			for (let prop in points) {
-				//console.log(`Property: ${prop} \n Value: ${points[prop]}`);
-				if (points[prop] !== 0 && prop !== "total") {
-					value = [prop, points[prop]];
-					pieArray.push(value);
-				}
+			function drawChart() {
+				controller.chartData = google.visualization.arrayToDataTable(controller.pieArray);
+				controller.chartOptions = {
+					title: 'My Treehouse Point Breakdown',
+					pieHole: 0.4,
+				};
+				controller.chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+				controller.chart.draw(controller.chartData, controller.chartOptions);
+				resolve();
 			}
-			//console.log(pieArray);
-			
-			let chartData = google.visualization.arrayToDataTable(pieArray);
-			let options = {
-				title: 'My Treehouse Point Breakdown',
-				pieHole: 0.4,
-			};
-			let chart = new google.visualization.PieChart(document.getElementById('donutchart'));
-			chart.draw(chartData, options);
-			
-		}
+		});
 	}
 	
 	
