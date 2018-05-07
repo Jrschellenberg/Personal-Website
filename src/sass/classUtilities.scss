@@ -94,25 +94,30 @@
 }
 
 .parallaxBackgroundPicture{
-  
   /* The image used */
   background-image: url("../images/backgrounds/background.jpg");
 
   /* Set a specific height */
   height: 800px;
-
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   //background-position: 50% 50%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  
+  @media(max-width:$sm){
+    background-image: url("../images/backgrounds/background-small.jpg");
+  }
 }
 
 .vCenter{
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+  @media(max-width:$sm){
+    transform: translateY(0%);
+  }
 }
 
 .carousel,.item,.active{height:100%;}
