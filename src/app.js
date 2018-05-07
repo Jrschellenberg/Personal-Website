@@ -5,7 +5,6 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const config = require('config');
-const dbConfig = config.get('DBHost');
 const expressSanitizer = require('express-sanitizer');
 
 const index = require('./routes/index');
@@ -17,7 +16,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public/images/favicon', 'favicon.ico')));
 if (config.util.getEnv('NODE_ENV') !== 'test') {
 	app.use(logger('dev'));
 }
@@ -34,7 +33,6 @@ app.use((req, res, next) => {
 	}
 	next();
 });
-
 
 app.use('/', index);
 

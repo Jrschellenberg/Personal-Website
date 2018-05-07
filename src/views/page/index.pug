@@ -1,7 +1,16 @@
 extends ../_layout/layout.pug
 block content
-  main.container-fluid.mb-5.ml-1
-    .row.justify-content-md-center
-      //include ../_includes/countdown.pug
-      h1.mx-auto Shell of a website, requires content
-        
+  main
+    .container-fluid.px-5.parallaxBackgroundPicture
+      .row.vCenter
+        .col-11.offset-1.mx-auto
+          h4.text-center
+            em How's it going? I'm
+        .col-11.offset-1.mx-auto
+          h1.text-center
+            strong JUSTIN SCHELLENBERG
+    include ../_includes/about.pug
+    include ../_includes/timeline.pug
+    include ../_includes/projects.pug
+    include ../_includes/treehouseStats.pug
+    include ../_includes/contact.pug
