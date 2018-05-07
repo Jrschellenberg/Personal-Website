@@ -57,12 +57,12 @@ export default class TreehouseStatsController {
 	fillInformation(data){
 		let badges = data.badges.length;
 		let badge = data.badges[badges-1];
-		document.getElementById('totalPoints').innerHTML = "Total Points: "+data.points.total;
 		
 		let html = '<img class="card-img card-img-top img-fluid" src="'+badge.icon_url+'" alt="Image of '+badge.name+' Badge" style="margin-left:25%; max-width:50%; max-height:auto;">' +
 			'<div class="card-body"><h5 class="card-title">Date Earned: '+new Date(badge.earned_date).toDateString()+'</h5>' +
 			'</div>'+
-			'<ul class="list-group list-group-flush"><li class="list-group-item">Total Badges Earned to Date: '+badges+'</li></ul>'+
+			'<ul class="list-group list-group-flush"><li class="list-group-item">Total Badges Earned to Date: '+badges+'</li>'+
+			'<li class="list-group-item">Total Points Earned to Date: '+data.points.total+'</li></ul>'+
 			'<div class="card-body"><div class="row">';
 		
 		for(let i=0; i<badge.courses.length; i++){
@@ -82,7 +82,6 @@ export default class TreehouseStatsController {
 			function drawChart() {
 				controller.chartData = google.visualization.arrayToDataTable(controller.pieArray);
 				controller.chartOptions = {
-					title: 'My Treehouse Point Breakdown',
 					pieHole: 0.4,
 				};
 				controller.chart = new google.visualization.PieChart(document.getElementById('donutchart'));
@@ -91,7 +90,6 @@ export default class TreehouseStatsController {
 			}
 		});
 	}
-	
 	
 	getTreehouseAjaxContent(){
 		return new Promise((resolve, reject) => {
