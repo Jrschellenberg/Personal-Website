@@ -66,7 +66,7 @@ export default class TreehouseStatsController {
 			'<div class="card-body"><div class="row">';
 		
 		for(let i=0; i<badge.courses.length; i++){
-			html += '<div class="col-md-6"><a href="'+badge.courses[i].url+'">'+badge.courses[i].title+'</a></div>';
+			html += '<div class="col-md-6"><a target="_blank" href="'+badge.courses[i].url+'">'+badge.courses[i].title+'</a></div>';
 		}
 		html += '</div>';
 		
