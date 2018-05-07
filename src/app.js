@@ -5,7 +5,6 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const config = require('config');
-const dbConfig = config.get('DBHost');
 const expressSanitizer = require('express-sanitizer');
 
 const index = require('./routes/index');
@@ -34,7 +33,6 @@ app.use((req, res, next) => {
 	}
 	next();
 });
-
 
 app.use('/', index);
 
