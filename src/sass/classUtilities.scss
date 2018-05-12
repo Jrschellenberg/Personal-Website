@@ -108,6 +108,7 @@
   
   @media(max-width:$sm){
     background-image: url("../images/backgrounds/background-small.jpg");
+    background-attachment: scroll; // This needed or it goes nuts on mobile.
   }
 }
 
