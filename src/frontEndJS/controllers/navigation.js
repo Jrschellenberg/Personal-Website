@@ -1,8 +1,8 @@
 export default class NavigationController {
 	constructor(){
-		this.oldTotalHeight = null
+		this.oldTotalHeight = null;
 		this.newTotalHeight = null;
-		this.scrollSpy()
+		this.scrollSpy();
 	}
 	
 	scrollSpy(){
@@ -18,14 +18,16 @@ export default class NavigationController {
 			controller.newTotalHeight = top.offsetHeight; //Initialize our instance variables
 			controller.oldTotalHeight = 0;
 			
+			let scroll = controller.testForIE(window.scrollY) ? window.pageYOffset : window.scrollY;
+			
 			controller.testNewHeight('#Top', '#About', top.offsetHeight, about.offsetHeight );
 			controller.testNewHeight('#Top', '#Timeline', about.offsetHeight, timeline.offsetHeight );
 			controller.testNewHeight('#About', '#Projects', timeline.offsetHeight, projects.offsetHeight );
 			controller.testNewHeight('#Timeline', '#Treehouse', projects.offsetHeight, treehouse.offsetHeight );
-			console.log(`OldTotalHeight: ${controller.oldTotalHeight} \n newTotalHeight: ${controller.newTotalHeight}\n windowScroll: ${window.scrollY}`);
+			//console.log(`OldTotalHeight: ${controller.oldTotalHeight} \n newTotalHeight: ${controller.newTotalHeight}\n windowScroll: ${window.scrollY}`);
 			controller.testNewHeight('#Projects', '#Contact', treehouse.offsetHeight, contact.offsetHeight );
 			
-			if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight) { //Special case when at bottom of document...
+			if ((window.innerHeight + scroll + 10) >= document.body.scrollHeight) { //Special case when at bottom of document...
 				controller.setHTML('#Treehouse', '#Contact');
 			}
 			
@@ -33,12 +35,18 @@ export default class NavigationController {
 	}
 	testNewHeight(prevValue, nextValue, oldTotalHeightAdder, newTotalHeightAddition){
 		let controller = this;
-		if(window.scrollY + 10 >= controller.oldTotalHeight && window.scrollY + 10 < controller.newTotalHeight ){
+		let scroll = controller.testForIE(window.scrollY) ? window.pageYOffset : window.scrollY;
+		if(scroll + 10 >= controller.oldTotalHeight && scroll + 10 < controller.newTotalHeight ){
 			controller.setHTML(prevValue, nextValue);
 		}
 		controller.oldTotalHeight += oldTotalHeightAdder;
 		controller.newTotalHeight += newTotalHeightAddition;
 	}
+	
+	testForIE(scroll){
+		return typeof scroll === 'undefined';
+	}
+	
 	
 	setHTML(prevScroll, nextScroll){
 		let html = '<a data-scroll href="'+prevScroll+'"><span class="prev"></span></a>'+
