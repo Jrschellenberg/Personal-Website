@@ -142,7 +142,7 @@ body{
   }
   
   button.navbar-toggler:hover{
-    background-color: $navbar-hover-color;
+    background-color: $primary-background-colour-dark;
     color: $secondary-text;
     cursor: pointer;
   }
@@ -155,11 +155,10 @@ Main Nav and Footer navigation link styles!
 .nav-link{
   border-radius:$navbar-shift-border-radius;
   color: $navbar-color !important;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out;
 }
 .nav-link:hover{
   background-color: $primary-background-color-hover;
-  color:$navbar-hover-color !important;
+  //color:$navbar-hover-color !important;
 }
 
 .shift ul li a,
