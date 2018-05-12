@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.1.5] - 2018-05-12
+
+### Added
+- Css rules for proper button navigation on fixed-top buttons
+- Fixed top button navigation for mobile and medium devices.
+- Fixed button scroll up/down buttons for larger devices
+- Css rule to fix background picture rendering bug on IOS devices.
+
+### Changed
+- Changed the whole navigation system.
+- Changed Positioning rules for fontAwesome Icons, Allowing them to center accross more devices.
+
+### Removed
+- Removed the Main navigation from website.
+- Removed Footer from website.
+
 ## [0.1.4] - 2018-05-09
 
 ### Changed
