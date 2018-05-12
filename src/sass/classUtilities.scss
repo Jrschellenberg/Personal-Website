@@ -108,6 +108,7 @@
   
   @media(max-width:$sm){
     background-image: url("../images/backgrounds/background-small.jpg");
+    background-attachment: scroll; // This needed or it goes nuts on mobile.
   }
 }
 
@@ -122,3 +123,32 @@
 
 .carousel,.item,.active{height:100%;}
 .carousel-inner{height:100%;}
+
+.navBar-Dark{
+  background-color: $primary-background-colour-dark;
+}
+
+.navigation-buttons{
+  bottom: 20px;
+  position: fixed;
+  right: 20px;
+  z-index: 999;
+  
+  span{
+    border-radius: 3px;
+    cursor: pointer;
+    display: block;
+    height: 30px;
+    width: 30px;
+    margin-top: 6px;
+  }
+  span.prev{
+    background: url(https://static-assets.strikinglycdn.com/images/nav-prev.9b7656600ce9922302fa591f0be905b7.png) 5px 5px no-repeat #222;
+  }
+
+  span.next{
+    background: url(https://static-assets.strikinglycdn.com/images/nav-next.dacef369fbedad44046aa690538793ff.png) 5px 5px no-repeat #222;
+  }
+  
+}
+
