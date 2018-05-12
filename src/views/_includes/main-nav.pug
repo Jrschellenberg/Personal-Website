@@ -1,19 +1,22 @@
-nav#navigation.navbar.navbar-expand-lg.navbar-right.secondary-text.navbar-light
-  .container-fluid.mr-5
-    span.sr-only (current)
-    button#toggleExpandMenu.navbar-toggler.m-2(type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation")
-      span.navbar-toggler-icon
-    img.d-lg-none.mx-auto(style="height: 4rem;" src="/images/logo/logo.svg" alt="Brand")
-    #navbarsExample03.collapse.navbar-collapse.shift.mr-5.pr-5
-      ul.navbar-nav.mx-auto.pr-5
-        li.nav-item
-          a.nav-link.closeMenu(data-scroll href="#About") About
-        li.nav-item
-          a.nav-link.closeMenu(data-scroll href="#Timeline") Accomplishments
-        li.nav-item
-          a.nav-link.closeMenu(data-scroll href="#Projects") Projects
-        img.d-none.d-lg-inline-block.mx-5(style="height: 4rem;" src="/images/logo/logo.svg" alt="Brand")
-        li.nav-item
-          a.nav-link.closeMenu(data-scroll href="#Treehouse") Treehouse
-        li.nav-item
-          a.nav-link.closeMenu(data-scroll href="#Contact") Contact
+button#toggleExpandMenu.navbar-toggler.m-2.fixed-top.navBar-Dark.navbar-light.d-lg-none(type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation")
+  span.navbar-toggler-icon
+#navbarsExample03.collapse.navbar-collapse.fixed-top.navBar-Dark.p-2.d-lg-none
+  ul.navbar-nav
+    li.nav-item.my-4
+      button.navbar-toggler.m-2.navBar-Dark.fixed-top.navbar-light.border.border-dark(type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation")
+        span.navbar-toggler-icon
+    li.nav-item
+      .dropdown-divider.border-dark
+      a.nav-link.closeMenu(data-scroll href="#About") About
+      .dropdown-divider.border-dark
+    li.nav-item
+      a.nav-link.closeMenu(data-scroll href="#Timeline") Accomplishments
+      .dropdown-divider.border-dark
+    li.nav-item
+      a.nav-link.closeMenu(data-scroll href="#Projects") Projects
+      .dropdown-divider.border-dark
+    li.nav-item
+      a.nav-link.closeMenu(data-scroll href="#Treehouse") Treehouse
+      .dropdown-divider.border-dark
+    li.nav-item
+      a.nav-link.closeMenu(data-scroll href="#Contact") Contact
